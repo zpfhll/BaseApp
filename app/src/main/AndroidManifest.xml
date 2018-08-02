@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.its.baseapplication">
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 必要ではないpermissionを追加するのは禁止です-->
+
+    <application
+        android:allowBackup="false"
+        android:icon="${appIcon}"
+        android:label="@string/app_name"
+        android:roundIcon="${appIcon}"
+        android:supportsRtl="true"
+        android:name=".gamen.base.BaseApplication"
+        android:theme="@style/AppTheme">
+        <activity android:name=".gamen.splash.SplashActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- activity或いはserviceには、exported="false"を設定する必要です -->
+        <!-- activityには、launchMode="singleTask"を設定するのは禁止です、設定する必要があれば、この画面に遷移するとき、Intentに何データも設定しない -->
+
+
+
+    </application>
+
+</manifest>
